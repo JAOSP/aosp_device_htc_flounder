@@ -24,6 +24,8 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, device/htc/flounder/product.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product-if-exists, vendor/aosp/htc/flounder/aosp.mk)
+$(call inherit-product, device/aosp/common/aosp.mk)
 
 PRODUCT_NAME := aosp_flounder
 PRODUCT_DEVICE := flounder
