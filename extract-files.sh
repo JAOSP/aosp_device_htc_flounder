@@ -4,17 +4,17 @@ VENDOR=htc
 DEVICE=flounder
 
 echo "Please wait..."
-wget -nc -q https://dl.google.com/dl/android/aosp/volantis-mra58k-factory-cc430962.tgz
-tar zxf volantis-mra58k-factory-cc430962.tgz
-rm volantis-mra58k-factory-cc430962.tgz
-cd volantis-mra58k
-unzip image-volantis-mra58k.zip
-rm image-volantis-mra58k.zip
+wget -nc -q https://dl.google.com/dl/android/aosp/volantis-mmb29s-factory-80118d3a.tgz
+tar zxf volantis-mmb29s-factory-80118d3a.tgz
+rm volantis-mmb29s-factory-80118d3a.tgz
+cd volantis-mmb29s
+unzip image-volantis-mmb29s.zip
+rm image-volantis-mmb29s.zip
 cd ../
-./simg2img volantis-mra58k/vendor.img vendor.ext4.img
+./simg2img volantis-mmb29s/vendor.img vendor.ext4.img
 mkdir vendor
 sudo mount -o loop -t ext4 vendor.ext4.img vendor
-./simg2img volantis-mra58k/system.img system.ext4.img
+./simg2img volantis-mmb29s/system.img system.ext4.img
 mkdir system
 sudo mount -o loop -t ext4 system.ext4.img system
 
@@ -45,6 +45,6 @@ sudo umount vendor
 rm -rf vendor
 sudo umount system
 rm -rf system
-rm -rf volantis-mra58k
+rm -rf volantis-mmb29s
 rm vendor.ext4.img
 rm system.ext4.img
